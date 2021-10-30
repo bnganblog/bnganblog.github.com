@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>CloudFlare Workers 反代任意网站和挂载单页代码 - Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="介绍 CloudFlare Workers是一个支持jsproxy的无服务器函数服务，提供全球CDN支持，免费用户有每天10万请求额度； CloudFlare官网：https:&amp;#x2F;&amp;#x2F;dash.cloudflare.com 记录下一些简单的使用方法，以后再陆续更新；"><meta property="og:type" content="blog"><meta property="og:title" content="CloudFlare Workers 反代任意网站和挂载单页代码"><meta property="og:url" content="http://example.com/2021/10/31/CloudFlare-Workers-%E5%8F%8D%E4%BB%A3%E4%BB%BB%E6%84%8F%E7%BD%91%E7%AB%99%E5%92%8C%E6%8C%82%E8%BD%BD%E5%8D%95%E9%A1%B5%E4%BB%A3%E7%A0%81/"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="介绍 CloudFlare Workers是一个支持jsproxy的无服务器函数服务，提供全球CDN支持，免费用户有每天10万请求额度； CloudFlare官网：https:&amp;#x2F;&amp;#x2F;dash.cloudflare.com 记录下一些简单的使用方法，以后再陆续更新；"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://gitee.com/liuhao03/tuchuang/raw/master/202110192343045.png"><meta property="article:published_time" content="2021-10-30T16:44:10.000Z"><meta property="article:modified_time" content="2021-10-30T16:48:31.897Z"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://gitee.com/liuhao03/tuchuang/raw/master/202110192343045.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/10/31/CloudFlare-Workers-%E5%8F%8D%E4%BB%A3%E4%BB%BB%E6%84%8F%E7%BD%91%E7%AB%99%E5%92%8C%E6%8C%82%E8%BD%BD%E5%8D%95%E9%A1%B5%E4%BB%A3%E7%A0%81/"},"headline":"CloudFlare Workers 反代任意网站和挂载单页代码","image":["https://gitee.com/liuhao03/tuchuang/raw/master/202110192343045.png"],"datePublished":"2021-10-30T16:44:10.000Z","dateModified":"2021-10-30T16:48:31.897Z","author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"Hexo","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.svg"}},"description":"介绍 CloudFlare Workers是一个支持jsproxy的无服务器函数服务，提供全球CDN支持，免费用户有每天10万请求额度； CloudFlare官网：https:&#x2F;&#x2F;dash.cloudflare.com 记录下一些简单的使用方法，以后再陆续更新；"}</script><link rel="canonical" href="http://example.com/2021/10/31/CloudFlare-Workers-%E5%8F%8D%E4%BB%A3%E4%BB%BB%E6%84%8F%E7%BD%91%E7%AB%99%E5%92%8C%E6%8C%82%E8%BD%BD%E5%8D%95%E9%A1%B5%E4%BB%A3%E7%A0%81/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">大约</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-10-30T16:44:10.000Z" title="2021/10/31 上午12:44:10">2021-10-31</time>发表</span><span class="level-item"><time dateTime="2021-10-30T16:48:31.897Z" title="2021/10/31 上午12:48:31">2021-10-31</time>更新</span><span class="level-item">5 分钟读完 (大约750个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">CloudFlare Workers 反代任意网站和挂载单页代码</h1><div class="content"><img src="https://gitee.com/liuhao03/tuchuang/raw/master/202110192343045.png" alt="请输入图片描述" title="请输入图片描述" />
+<strong>介绍</strong>
+CloudFlare Workers是一个支持jsproxy的无服务器函数服务，提供全球CDN支持，免费用户有每天10万请求额度；
+CloudFlare官网：<a target="_blank" rel="noopener" href="https://dash.cloudflare.com">https://dash.cloudflare.com</a>
+记录下一些简单的使用方法，以后再陆续更新；
+<span id="more"></span>
+<strong>Workers 单页挂载代码</strong>
+<pre><code class="lang-php">addEventListener('fetch', event =&gt; &#123;
+  event.respondWith(handleRequest(event.request))
+&#125;)
+
+<p>// HTML代码<br>let html = <code>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;&amp;lt;title&amp;gt;Test&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;   &amp;lt;body&amp;gt;&amp;lt;div&amp;gt;Hello world!&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;</code>;</p>
+<p>/**</p>
+<ul>
+<li>Respond to the request</li>
+<li>@param {Request} request</li>
+<li>/<br>async function handleRequest(request) {<br>return new Response(html, {<br>  headers: {<pre><code>&#39;Content-Type&#39;: &#39;text/html; charset=UTF-8&#39;
+</code></pre>
+  },<br>  status: 200<br>})<br>}</code></pre><br><strong>Workers 反代任意网站</strong><pre><code class="lang-php">// Website you intended to retrieve for users.
+const upstream = 'sunpma.com'</li>
+</ul>
+<p>// Custom pathname for the upstream website.<br>const upstream_path = ‘/‘</p>
+<p>// Website you intended to retrieve for users using mobile devices.<br>const upstream_mobile = ‘sunpma.com’</p>
+<p>// Countries and regions where you wish to suspend your service.<br>const blocked_region = [‘KP’, ‘SY’, ‘PK’, ‘CU’]</p>
+<p>// IP addresses which you wish to block from using your service.<br>const blocked_ip_address = [‘0.0.0.0’, ‘127.0.0.1’]</p>
+<p>// Whether to use HTTPS protocol for upstream address.<br>const https = true</p>
+<p>// Whether to disable cache.<br>const disable_cache = false</p>
+<p>// Replace texts.<br>const replace_dict = &#123;<br>    ‘$upstream’: ‘$custom_domain’,<br>    ‘//sunpma.com’: ‘’<br>&#125;</p>
+<p>addEventListener(‘fetch’, event =&gt; &#123;<br>    event.respondWith(fetchAndApply(event.request));<br>&#125;)</p>
+<p>async function fetchAndApply(request) &#123;<br>    const region = request.headers.get(‘cf-ipcountry’).toUpperCase();<br>    const ip_address = request.headers.get(‘cf-connecting-ip’);<br>    const user_agent = request.headers.get(‘user-agent’);</p>
+<pre><code>let response = null;
+let url = new URL(request.url);
+let url_hostname = url.hostname;
+
+if (https == true) &#123;
+    url.protocol = &#39;https:&#39;;
+&#125; else &#123;
+    url.protocol = &#39;http:&#39;;
+&#125;
+
+if (await device_status(user_agent)) &#123;
+    var upstream_domain = upstream;
+&#125; else &#123;
+    var upstream_domain = upstream_mobile;
+&#125;
+
+url.host = upstream_domain;
+if (url.pathname == &#39;/&#39;) &#123;
+    url.pathname = upstream_path;
+&#125; else &#123;
+    url.pathname = upstream_path + url.pathname;
+&#125;
+
+if (blocked_region.includes(region)) &#123;
+    response = new Response(&#39;Access denied: WorkersProxy is not available in your region yet.&#39;, &#123;
+        status: 403
+    &#125;);
+&#125; else if (blocked_ip_address.includes(ip_address)) &#123;
+    response = new Response(&#39;Access denied: Your IP address is blocked by WorkersProxy.&#39;, &#123;
+        status: 403
+    &#125;);
+&#125; else &#123;
+    let method = request.method;
+    let request_headers = request.headers;
+    let new_request_headers = new Headers(request_headers);
+
+    new_request_headers.set(&#39;Host&#39;, upstream_domain);
+    new_request_headers.set(&#39;Referer&#39;, url.protocol + &#39;//&#39; + url_hostname);
+
+    let original_response = await fetch(url.href, &#123;
+        method: method,
+        headers: new_request_headers
+    &#125;)
+
+    connection_upgrade = new_request_headers.get(&quot;Upgrade&quot;);
+    if (connection_upgrade &amp;amp;&amp;amp; connection_upgrade.toLowerCase() == &quot;websocket&quot;) &#123;
+        return original_response;
+    &#125;
+
+    let original_response_clone = original_response.clone();
+    let original_text = null;
+    let response_headers = original_response.headers;
+    let new_response_headers = new Headers(response_headers);
+    let status = original_response.status;
+    
+    if (disable_cache) &#123;
+        new_response_headers.set(&#39;Cache-Control&#39;, &#39;no-store&#39;);
+    &#125;
+
+    new_response_headers.set(&#39;access-control-allow-origin&#39;, &#39;*&#39;);
+    new_response_headers.set(&#39;access-control-allow-credentials&#39;, true);
+    new_response_headers.delete(&#39;content-security-policy&#39;);
+    new_response_headers.delete(&#39;content-security-policy-report-only&#39;);
+    new_response_headers.delete(&#39;clear-site-data&#39;);
+    
+    if (new_response_headers.get(&quot;x-pjax-url&quot;)) &#123;
+        new_response_headers.set(&quot;x-pjax-url&quot;, response_headers.get(&quot;x-pjax-url&quot;).replace(&quot;//&quot; + upstream_domain, &quot;//&quot; + url_hostname));
+    &#125;
+    
+    const content_type = new_response_headers.get(&#39;content-type&#39;);
+    if (content_type != null &amp;amp;&amp;amp; content_type.includes(&#39;text/html&#39;) &amp;amp;&amp;amp; content_type.includes(&#39;UTF-8&#39;)) &#123;
+        original_text = await replace_response_text(original_response_clone, upstream_domain, url_hostname);
+    &#125; else &#123;
+        original_text = original_response_clone.body
+    &#125;
+    
+    response = new Response(original_text, &#123;
+        status,
+        headers: new_response_headers
+    &#125;)
+&#125;
+return response;
+</code></pre>
+<p>}</p>
+<p>async function replace_response_text(response, upstream_domain, host_name) {<br>    let text = await response.text()</p>
+<pre><code>var i, j;
+for (i in replace_dict) &#123;
+    j = replace_dict[i]
+    if (i == &#39;$upstream&#39;) &#123;
+        i = upstream_domain
+    &#125; else if (i == &#39;$custom_domain&#39;) &#123;
+        i = host_name
+    &#125;
+
+    if (j == &#39;$upstream&#39;) &#123;
+        j = upstream_domain
+    &#125; else if (j == &#39;$custom_domain&#39;) &#123;
+        j = host_name
+    &#125;
+
+    let re = new RegExp(i, &#39;g&#39;)
+    text = text.replace(re, j);
+&#125;
+return text;
+</code></pre>
+<p>}</p>
+<p>async function device_status(user_agent_info) {<br>    var agents = [“Android”, “iPhone”, “SymbianOS”, “Windows Phone”, “iPad”, “iPod”];<br>    var flag = true;<br>    for (var v = 0; v &lt; agents.length; v++) {<br>        if (user_agent_info.indexOf(agents[v]) &gt; 0) {<br>            flag = false;<br>            break;<br>        }<br>    }<br>    return flag;<br>}</code></pre><br>替换掉其中的sunpma.com为你需要反代的网址即可；</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>CloudFlare Workers 反代任意网站和挂载单页代码</p><p><a href="http://example.com/2021/10/31/CloudFlare-Workers-反代任意网站和挂载单页代码/">http://example.com/2021/10/31/CloudFlare-Workers-反代任意网站和挂载单页代码/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>John Doe</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-10-31</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-10-31</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/10/31/V2RAY%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC/"><span class="level-item">V2RAY一键部署脚本</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://www.gravatar.com/avatar/4592172b60cacc9155c3cf21321c4ac0?s=128" alt="饼干"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">饼干</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Singapore</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ruiliijdhdhdh" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-10-30T16:44:10.000Z">2021-10-31</time></p><p class="title"><a href="/2021/10/31/CloudFlare-Workers-%E5%8F%8D%E4%BB%A3%E4%BB%BB%E6%84%8F%E7%BD%91%E7%AB%99%E5%92%8C%E6%8C%82%E8%BD%BD%E5%8D%95%E9%A1%B5%E4%BB%A3%E7%A0%81/">CloudFlare Workers 反代任意网站和挂载单页代码</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-10-30T16:43:10.000Z">2021-10-31</time></p><p class="title"><a href="/2021/10/31/V2RAY%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC/">V2RAY一键部署脚本</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a><p class="is-size-7"><span>&copy; 2021 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
