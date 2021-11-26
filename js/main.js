@@ -134,4 +134,8 @@
         $mask.on('click', toggleToc);
         $('.navbar-main .catalogue').on('click', toggleToc);
     }
+    
+    $('div.container div.card[data-type=tags]').addClass('is-hidden-mobile');
+    $('div.container div.card[data-type=archives]').addClass('is-hidden-mobile');
+
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
