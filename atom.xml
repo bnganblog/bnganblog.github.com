@@ -6,7 +6,7 @@
   <link href="https://g8d.xyz/atom.xml" rel="self"/>
   
   <link href="https://g8d.xyz/"/>
-  <updated>2022-05-25T15:26:40.159Z</updated>
+  <updated>2022-05-25T15:29:00.285Z</updated>
   <id>https://g8d.xyz/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>jsDelivr域名已经收到污染</title>
+    <title>jsDelivr cdn已经污染</title>
     <link href="https://g8d.xyz/2022/05/20/jsdelivr2/"/>
     <id>https://g8d.xyz/2022/05/20/jsdelivr2/</id>
     <published>2022-05-20T03:51:24.000Z</published>
-    <updated>2022-05-25T15:26:40.159Z</updated>
+    <updated>2022-05-25T15:29:00.285Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>众所周知的原因jsdelivr已经被污染我的博客里面大多数图片已经无法正常访问</p></blockquote><span id="more"></span><p>Jsdelivr 在中国区的 CDN 服务再一次被 DNS 污染了，被指向到了 Google、Twitter 和 Facebook 的 IP 地址。<br>虽然 cdn.jsdelivr.net 被 DNS 污染了，但是 fastly.jsdelivr.net 没有被污染，仍然可以正常使用。</p>]]></content>
     
