@@ -38,6 +38,27 @@
   </entry>
   
   <entry>
+    <title>自制一个连接WiFi二维码</title>
+    <link href="https://g8d.xyz/2022/04/12/wifi/"/>
+    <id>https://g8d.xyz/2022/04/12/wifi/</id>
+    <published>2022-04-12T07:47:49.000Z</published>
+    <updated>2022-05-25T15:49:12.924Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>有客人来家里总是问WiFi密码说了一遍又一遍</p></blockquote><span id="more"></span><h1 id="现在安卓手机都有自带的二维码分享功能最省事的方法就是直接截图然后打印"><a href="#现在安卓手机都有自带的二维码分享功能最省事的方法就是直接截图然后打印" class="headerlink" title="现在安卓手机都有自带的二维码分享功能最省事的方法就是直接截图然后打印"></a>现在安卓手机都有自带的二维码分享功能最省事的方法就是直接截图然后打印</h1><p>不过今天就是要走个弯路自己一步一步创建出来</p><h2 id="生成代码"><a href="#生成代码" class="headerlink" title="生成代码"></a>生成代码</h2><p>WIFI:T:WPA;S:wifi名称;P:密码;H:false;<br>将wifi名称和密码改成你家的即可</p><h2 id="生成二维码"><a href="#生成二维码" class="headerlink" title="生成二维码"></a>生成二维码</h2><p>在网上找一个二维码生成站直接把文本粘贴进去就OK了</p><p>最后就是把他打出来…</p>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;有客人来家里总是问WiFi密码说了一遍又一遍&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="wifi" scheme="https://g8d.xyz/tags/wifi/"/>
+    
+  </entry>
+  
+  <entry>
     <title>新年快乐！！！</title>
     <link href="https://g8d.xyz/2022/01/31/v2/"/>
     <id>https://g8d.xyz/2022/01/31/v2/</id>
@@ -391,25 +412,6 @@ CloudFlare官网：&lt;a href=&quot;https://dash.cloudflare.com&quot;&gt;https:/
     
     
     <summary type="html">&lt;p&gt;挺久以前就有网友给我的 GitHub Pages 博客模板提 Issue，说希望能增加 CDN 用于加速静态资源的加载，由于懒，一直没有动。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="jsDelivr" scheme="https://g8d.xyz/tags/jsDelivr/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用 jsDelivr 免费加速 GitHub Pages 博客的静态资源（二）</title>
-    <link href="https://g8d.xyz/2021/03/10/jsDelivr-2/"/>
-    <id>https://g8d.xyz/2021/03/10/jsDelivr-2/</id>
-    <published>2021-03-10T04:13:47.000Z</published>
-    <updated>2021-11-20T04:20:14.298Z</updated>
-    
-    <content type="html"><![CDATA[<p>之前写过一篇 使用 jsDelivr 免费加速 GitHub Pages 博客的静态资源，在那之后，又陆续想到并实施了几点利用 jsDelivr 进一步加速静态资源加载的措施，新起一篇作为记录和分享。</p><span id="more"></span><p>继上一轮改造过后，比较拖页面加载速度的主要有三点：</p><ol><li>页面首个请求响应时间；</li><li>图片资源加载时间；</li><li>站内搜索引用的 JSON 资源加载时间。</li></ol><p>第 1 点在页面仍然托管在 GitHub Pages 的前提下，似乎没有什么好办法能产生质的飞跃；本篇主要改善了第 2 点和第 3 点。</p><h1 id="0x01-图片资源加速"><a href="#0x01-图片资源加速" class="headerlink" title="0x01 图片资源加速"></a><strong>0x01 图片资源加速</strong></h1><p>这里所说的图片主要是指文章里引用的图片。</p><p>我一直将图片放在博客源码根目录的 images 文件夹下，引用图片的习惯写法是这样的：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![after use cdn](/images/posts/github/cdn-after.png)</span><br></pre></td></tr></table></figure><p>如果想将这个图片地址替换为 jsDelivr 的地址，需要做的就是将 /images 替换为 <a href="https://cdn.jsdelivr.net/gh/mzlogin/mzlogin.github.io@master/images">https://cdn.jsdelivr.net/gh/mzlogin/mzlogin.github.io@master/images</a></p><p>一处一处替换行不行？当然也行，但后面写新文章时要引用图片，还得手动写这一长串，不方便；万一 jsDeliver 出状况，也不好一键切换回来。有没有一劳永逸的方法？当然也有，我们从 Jekyll 的 layout 机制来想办法。</p><p>Jekyll 的 layout 可以理解为页面模板，它是可以继承的，比如我的博客的所有页面模板有一个共同的祖先模板 _layouts/default.html，模板里可以使用 Liquid 语法对内容进行处理，我们可以利用这一点，来自动完成批量替换的工作。</p><p>关键代码如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% assign assets_base_url = site.url %&#125;</span><br><span class="line">&#123;% if site.cdn.jsdelivr.enabled %&#125;</span><br><span class="line">&#123;% assign assets_base_url = &quot;https://cdn.jsdelivr.net/gh/&quot; | append: site.repository | append: &#x27;@master&#x27; %&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&#123;% assign assets_images_url = &#x27;src=&quot;&#x27; | append: assets_base_url | append: &quot;/images&quot; %&#125;</span><br><span class="line">&#123;% include header.html %&#125;</span><br><span class="line">    &#123;&#123; content | replace: &#x27;src=&quot;/images&#x27;, assets_images_url &#125;&#125;</span><br><span class="line">&#123;% include footer.html %&#125;</span><br></pre></td></tr></table></figure><p>大意就是，如果打开了启用 jsDelivr 加速的开关，就将 content 里的 src=”/images” 替换为 src=”<a href="https://cdn.jsdelivr.net/gh/mzlogin/mzlogin.github.io@master/images&quot;%EF%BC%8C%E5%90%A6%E5%88%99%E6%9B%BF%E6%8D%A2%E4%B8%BA">https://cdn.jsdelivr.net/gh/mzlogin/mzlogin.github.io@master/images&quot;，否则替换为</a> src=”<a href="https://mazhuang.org/images&quot;">https://mazhuang.org/images&quot;</a></p><p>以上便达成了我们的目的</p><h1 id="0x02-站内搜索引用的-JSON-资源加速"><a href="#0x02-站内搜索引用的-JSON-资源加速" class="headerlink" title="0x02 站内搜索引用的 JSON 资源加速"></a><strong>0x02 站内搜索引用的 JSON 资源加速</strong></h1><p>我是使用 <a href="https://github.com/christian-fei/Simple-Jekyll-Search">Simple-Jekyll-Search</a> 这个 JavaScript 库来实现站内搜索的，它的搜索数据是来自一个动态生成的 JSON 文件。</p><p>这个 JSON 文件编译前长这样：</p><p><a href="https://github.com/mzlogin/mzlogin.github.io/blob/master/assets/search_data.json">https://github.com/mzlogin/mzlogin.github.io/blob/master/assets/search_data.json</a></p><p>Jekyll 编译后长这样：</p><p><a href="https://mazhuang.org/assets/search_data.json">https://mazhuang.org/assets/search_data.json</a></p><p>这样的资源是没有办法直接通过替换网址来用 jsDelivr 加速的，因为 jsDelivr 上缓存的是编译前的文件，而我们需要的是编译后的。</p><p>那我们就想办法：</p><p>将博客源码编译；<br>将编译结果保存到另一个分支；<br>通过 jsDelivr 引用新分支上的这个文件。<br>这些步骤可以通过 GitHub 去年推出的新特性 <a href="https://github.com/features/actions">Actions</a> 来完成，在我们每一次向博客源码仓库 push 代码时自动触发。</p><p>关键步骤如下：</p><ol><li>在 GitHub 新建一个 Personal access Token：</li></ol><p> Settings –&gt; Developer settings –&gt; Personal access tokens –&gt; Generate new token –&gt; 填写 note，勾选 public_repo，生成之后复制 token 值备用。</p><ol start="2"><li><p>在博客源码仓库的 Settings –&gt; Secrets –&gt; New secret，Name 填 ACCESS_TOKEN，Value 填第 1 步里复制的 token 值；</p></li><li><p>在博客源码根目录下新建文件 .github/workflows/ci.yml，内容如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">name: Build and Deploy</span><br><span class="line"></span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches: [ master ]</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  build-and-deploy:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    steps:</span><br><span class="line">      - name: Checkout</span><br><span class="line">        uses: actions/checkout@v2.3.1</span><br><span class="line">        with: </span><br><span class="line">          persist-credentials: false</span><br><span class="line"></span><br><span class="line">      - name: Set Ruby 2.7</span><br><span class="line">        uses: actions/setup-ruby@v1</span><br><span class="line">        with:</span><br><span class="line">          ruby-version: 2.7</span><br><span class="line"></span><br><span class="line">      - name: Install and Build</span><br><span class="line">        run: |</span><br><span class="line">          gem install bundler</span><br><span class="line">          bundle install</span><br><span class="line">          bundle exec jekyll build</span><br><span class="line">           </span><br><span class="line">      - name: Deploy</span><br><span class="line">        uses: JamesIves/github-pages-deploy-action@3.6.2</span><br><span class="line">        with:</span><br><span class="line">          ACCESS_TOKEN: $</span><br><span class="line">          BRANCH: built</span><br><span class="line">          FOLDER: _site</span><br><span class="line">          CLEAN: true</span><br></pre></td></tr></table></figure><p>大意就是在向 master 分支 push 代码时，自动执行 checkout、初始化 ruby 环境、安装 Jekyll 并编译博客源码的工作，最后将编译生成的 _site 目录里的内容推送到 built 分支。对 GitHub Actions 感兴趣的同学可以自行参考官方说明学习</p></li><li><p>修改引用 JSON 文件的地方，比如我的 _includes/sidebar-search.html 里的写法由：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json: &#x27;https://mazhuang.org/assets/search_data.json&#x27;,</span><br></pre></td></tr></table></figure><p>改为了</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if site.cdn.jsdelivr.enabled and site.url contains &#x27;mazhuang.org&#x27; %&#125;</span><br><span class="line">  json: &#x27;https://cdn.jsdelivr.net/gh/mzlogin/mzlogin.github.io@built/assets/search_data.json&#x27;,</span><br><span class="line">&#123;% else %&#125;</span><br><span class="line">  json: &#x27;&#123;&#123; site.url &#125;&#125;/assets/search_data.json&#x27;,</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure><p>将以上更改推送到源码仓库，等待处理完成即可。</p></li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;之前写过一篇 使用 jsDelivr 免费加速 GitHub Pages 博客的静态资源，在那之后，又陆续想到并实施了几点利用 jsDelivr 进一步加速静态资源加载的措施，新起一篇作为记录和分享。&lt;/p&gt;</summary>
     
     
     
