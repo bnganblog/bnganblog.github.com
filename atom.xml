@@ -3,11 +3,11 @@
   <title>饼干博客</title>
   
   
-  <link href="https://g8d.xyz/atom.xml" rel="self"/>
+  <link href="https://bnganblog.github.io/atom.xml" rel="self"/>
   
-  <link href="https://g8d.xyz/"/>
+  <link href="https://bnganblog.github.io/"/>
   <updated>2022-02-01T07:48:31.986Z</updated>
-  <id>https://g8d.xyz/</id>
+  <id>https://bnganblog.github.io/</id>
   
   <author>
     <name>饼干</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>新年快乐！！！</title>
-    <link href="https://g8d.xyz/2022/01/31/v2/"/>
-    <id>https://g8d.xyz/2022/01/31/v2/</id>
+    <link href="https://bnganblog.github.io/2022/01/31/v2/"/>
+    <id>https://bnganblog.github.io/2022/01/31/v2/</id>
     <published>2022-01-31T05:00:00.000Z</published>
     <updated>2022-02-01T07:48:31.986Z</updated>
     
@@ -31,14 +31,14 @@
     
     
     
-    <category term="v2ray" scheme="https://g8d.xyz/tags/v2ray/"/>
+    <category term="v2ray" scheme="https://bnganblog.github.io/tags/v2ray/"/>
     
   </entry>
   
   <entry>
     <title>申请hax免费VPS配合cf和x-ui搭建免费节点及自动续费</title>
-    <link href="https://g8d.xyz/2022/01/29/hax/"/>
-    <id>https://g8d.xyz/2022/01/29/hax/</id>
+    <link href="https://bnganblog.github.io/2022/01/29/hax/"/>
+    <id>https://bnganblog.github.io/2022/01/29/hax/</id>
     <published>2022-01-29T04:55:26.000Z</published>
     <updated>2022-01-29T05:10:03.858Z</updated>
     
@@ -54,8 +54,8 @@
   
   <entry>
     <title>icarus个性化配置</title>
-    <link href="https://g8d.xyz/2021/11/26/icarus/"/>
-    <id>https://g8d.xyz/2021/11/26/icarus/</id>
+    <link href="https://bnganblog.github.io/2021/11/26/icarus/"/>
+    <id>https://bnganblog.github.io/2021/11/26/icarus/</id>
     <published>2021-11-26T13:36:43.000Z</published>
     <updated>2021-11-27T10:01:23.425Z</updated>
     
@@ -73,8 +73,8 @@
   
   <entry>
     <title>打字机效果:Typed.js</title>
-    <link href="https://g8d.xyz/2021/11/26/Typed/"/>
-    <id>https://g8d.xyz/2021/11/26/Typed/</id>
+    <link href="https://bnganblog.github.io/2021/11/26/Typed/"/>
+    <id>https://bnganblog.github.io/2021/11/26/Typed/</id>
     <published>2021-11-26T12:29:59.000Z</published>
     <updated>2021-11-26T12:40:07.815Z</updated>
     
@@ -92,8 +92,8 @@
   
   <entry>
     <title>Cloudflare Worker 无服务器追查 Git 仓库代码泄露</title>
-    <link href="https://g8d.xyz/2021/11/24/Cloudflare-Worker-%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%BD%E6%9F%A5-Git-%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/"/>
-    <id>https://g8d.xyz/2021/11/24/Cloudflare-Worker-%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%BD%E6%9F%A5-Git-%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/</id>
+    <link href="https://bnganblog.github.io/2021/11/24/Cloudflare-Worker-%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%BD%E6%9F%A5-Git-%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/"/>
+    <id>https://bnganblog.github.io/2021/11/24/Cloudflare-Worker-%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%BD%E6%9F%A5-Git-%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/</id>
     <published>2021-11-24T14:45:45.000Z</published>
     <updated>2021-11-26T15:39:30.002Z</updated>
     
@@ -107,14 +107,14 @@
     
     
     
-    <category term="cloudflare" scheme="https://g8d.xyz/tags/cloudflare/"/>
+    <category term="cloudflare" scheme="https://bnganblog.github.io/tags/cloudflare/"/>
     
   </entry>
   
   <entry>
     <title>Markdown编辑器Editor.md集成使用教程</title>
-    <link href="https://g8d.xyz/2021/11/21/Markdown-Editor/"/>
-    <id>https://g8d.xyz/2021/11/21/Markdown-Editor/</id>
+    <link href="https://bnganblog.github.io/2021/11/21/Markdown-Editor/"/>
+    <id>https://bnganblog.github.io/2021/11/21/Markdown-Editor/</id>
     <published>2021-11-21T10:24:21.000Z</published>
     <updated>2021-11-26T15:39:56.199Z</updated>
     
@@ -128,14 +128,14 @@
     
     
     
-    <category term="Markdown" scheme="https://g8d.xyz/tags/Markdown/"/>
+    <category term="Markdown" scheme="https://bnganblog.github.io/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>MarkDown折叠语法</title>
-    <link href="https://g8d.xyz/2021/11/21/MarkDown%E6%8A%98%E5%8F%A0%E8%AF%AD%E6%B3%95/"/>
-    <id>https://g8d.xyz/2021/11/21/MarkDown%E6%8A%98%E5%8F%A0%E8%AF%AD%E6%B3%95/</id>
+    <link href="https://bnganblog.github.io/2021/11/21/MarkDown%E6%8A%98%E5%8F%A0%E8%AF%AD%E6%B3%95/"/>
+    <id>https://bnganblog.github.io/2021/11/21/MarkDown%E6%8A%98%E5%8F%A0%E8%AF%AD%E6%B3%95/</id>
     <published>2021-11-21T10:19:25.000Z</published>
     <updated>2021-11-26T15:46:10.508Z</updated>
     
@@ -149,14 +149,14 @@
     
     
     
-    <category term="Markdown" scheme="https://g8d.xyz/tags/Markdown/"/>
+    <category term="Markdown" scheme="https://bnganblog.github.io/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>下载GitHub上单个文件(夹)</title>
-    <link href="https://g8d.xyz/2021/11/20/downgit/"/>
-    <id>https://g8d.xyz/2021/11/20/downgit/</id>
+    <link href="https://bnganblog.github.io/2021/11/20/downgit/"/>
+    <id>https://bnganblog.github.io/2021/11/20/downgit/</id>
     <published>2021-11-20T07:28:48.000Z</published>
     <updated>2021-11-26T15:41:26.958Z</updated>
     
@@ -174,8 +174,8 @@
   
   <entry>
     <title>Base64编码原理解析</title>
-    <link href="https://g8d.xyz/2021/11/20/base64/"/>
-    <id>https://g8d.xyz/2021/11/20/base64/</id>
+    <link href="https://bnganblog.github.io/2021/11/20/base64/"/>
+    <id>https://bnganblog.github.io/2021/11/20/base64/</id>
     <published>2021-11-20T04:21:16.000Z</published>
     <updated>2021-11-26T15:42:28.164Z</updated>
     
@@ -189,14 +189,14 @@
     
     
     
-    <category term="v2ray" scheme="https://g8d.xyz/tags/v2ray/"/>
+    <category term="v2ray" scheme="https://bnganblog.github.io/tags/v2ray/"/>
     
   </entry>
   
   <entry>
     <title>CloudFlare 缓存全站</title>
-    <link href="https://g8d.xyz/2021/11/19/CloudFlare-%E7%BC%93%E5%AD%98%E5%85%A8%E7%AB%99/"/>
-    <id>https://g8d.xyz/2021/11/19/CloudFlare-%E7%BC%93%E5%AD%98%E5%85%A8%E7%AB%99/</id>
+    <link href="https://bnganblog.github.io/2021/11/19/CloudFlare-%E7%BC%93%E5%AD%98%E5%85%A8%E7%AB%99/"/>
+    <id>https://bnganblog.github.io/2021/11/19/CloudFlare-%E7%BC%93%E5%AD%98%E5%85%A8%E7%AB%99/</id>
     <published>2021-11-18T16:43:31.000Z</published>
     <updated>2021-11-26T15:42:46.917Z</updated>
     
@@ -210,14 +210,14 @@
     
     
     
-    <category term="cloudflare" scheme="https://g8d.xyz/tags/cloudflare/"/>
+    <category term="cloudflare" scheme="https://bnganblog.github.io/tags/cloudflare/"/>
     
   </entry>
   
   <entry>
     <title>在 Windows11 中安装 WSA (安卓子系统)</title>
-    <link href="https://g8d.xyz/2021/11/19/wsa/"/>
-    <id>https://g8d.xyz/2021/11/19/wsa/</id>
+    <link href="https://bnganblog.github.io/2021/11/19/wsa/"/>
+    <id>https://bnganblog.github.io/2021/11/19/wsa/</id>
     <published>2021-11-18T16:36:31.000Z</published>
     <updated>2021-11-26T15:47:47.211Z</updated>
     
@@ -235,8 +235,8 @@
   
   <entry>
     <title>青龙2.10+XDD-Plus+nvjdc短信验证登录对接xdd-plus</title>
-    <link href="https://g8d.xyz/2021/11/15/qinglong/"/>
-    <id>https://g8d.xyz/2021/11/15/qinglong/</id>
+    <link href="https://bnganblog.github.io/2021/11/15/qinglong/"/>
+    <id>https://bnganblog.github.io/2021/11/15/qinglong/</id>
     <published>2021-11-15T10:55:42.000Z</published>
     <updated>2021-11-27T06:47:05.698Z</updated>
     
@@ -254,8 +254,8 @@
   
   <entry>
     <title>使用 Cloudflare Pages 托管静态网站</title>
-    <link href="https://g8d.xyz/2021/10/31/Cloudflare-Pages/"/>
-    <id>https://g8d.xyz/2021/10/31/Cloudflare-Pages/</id>
+    <link href="https://bnganblog.github.io/2021/10/31/Cloudflare-Pages/"/>
+    <id>https://bnganblog.github.io/2021/10/31/Cloudflare-Pages/</id>
     <published>2021-10-31T09:45:34.000Z</published>
     <updated>2021-10-31T14:09:00.814Z</updated>
     
@@ -268,14 +268,14 @@ Cloudflare Pages 是一个静态网站托管服务，功能和 Github Pages 差�
     
     
     
-    <category term="cloudflare" scheme="https://g8d.xyz/tags/cloudflare/"/>
+    <category term="cloudflare" scheme="https://bnganblog.github.io/tags/cloudflare/"/>
     
   </entry>
   
   <entry>
     <title>CloudFlare Workers 反代任意网站和挂载单页代码</title>
-    <link href="https://g8d.xyz/2021/10/31/CloudFlare-Workers/"/>
-    <id>https://g8d.xyz/2021/10/31/CloudFlare-Workers/</id>
+    <link href="https://bnganblog.github.io/2021/10/31/CloudFlare-Workers/"/>
+    <id>https://bnganblog.github.io/2021/10/31/CloudFlare-Workers/</id>
     <published>2021-10-30T16:44:10.000Z</published>
     <updated>2021-10-31T14:08:55.159Z</updated>
     
@@ -291,14 +291,14 @@ CloudFlare官网：&lt;a href=&quot;https://dash.cloudflare.com&quot;&gt;https:/
     
     
     
-    <category term="cloudflare" scheme="https://g8d.xyz/tags/cloudflare/"/>
+    <category term="cloudflare" scheme="https://bnganblog.github.io/tags/cloudflare/"/>
     
   </entry>
   
   <entry>
     <title>V2RAY一键部署脚本</title>
-    <link href="https://g8d.xyz/2021/10/31/V2RAY/"/>
-    <id>https://g8d.xyz/2021/10/31/V2RAY/</id>
+    <link href="https://bnganblog.github.io/2021/10/31/V2RAY/"/>
+    <id>https://bnganblog.github.io/2021/10/31/V2RAY/</id>
     <published>2021-10-30T16:43:10.000Z</published>
     <updated>2021-10-31T12:40:19.290Z</updated>
     
@@ -315,8 +315,8 @@ CloudFlare官网：&lt;a href=&quot;https://dash.cloudflare.com&quot;&gt;https:/
   
   <entry>
     <title>用 Vim 编辑 Markdown 时直接粘贴图片</title>
-    <link href="https://g8d.xyz/2021/05/20/Vim-Markdown/"/>
-    <id>https://g8d.xyz/2021/05/20/Vim-Markdown/</id>
+    <link href="https://bnganblog.github.io/2021/05/20/Vim-Markdown/"/>
+    <id>https://bnganblog.github.io/2021/05/20/Vim-Markdown/</id>
     <published>2021-05-20T03:45:48.000Z</published>
     <updated>2021-11-21T16:03:53.259Z</updated>
     
@@ -328,18 +328,18 @@ CloudFlare官网：&lt;a href=&quot;https://dash.cloudflare.com&quot;&gt;https:/
     
     
     
-    <category term="Markdown" scheme="https://g8d.xyz/tags/Markdown/"/>
+    <category term="Markdown" scheme="https://bnganblog.github.io/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>Docker部署为知笔记（国内gitbook）</title>
-    <link href="https://g8d.xyz/2021/04/12/wiznote/"/>
-    <id>https://g8d.xyz/2021/04/12/wiznote/</id>
+    <link href="https://bnganblog.github.io/2021/04/12/wiznote/"/>
+    <id>https://bnganblog.github.io/2021/04/12/wiznote/</id>
     <published>2021-04-12T07:47:49.000Z</published>
     <updated>2021-11-12T08:18:02.250Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://img.2002000.xyz/imgs/2021/06/fe66b9023ec35d9b.png" alt="请输入图片描述"></p><p><strong>软件特色</strong></p><ul><li>一键收集微信、网页、微博 保存碎片信息 批量导入文档</li><li>文字、清单、手写 图片、拍照、语音、附件 一次记录永久保存</li><li>轻量级图文编辑工具 内置Markdown功能 写出漂亮的文档</li><li>资料永久保存在云端 修改后的笔记会保存历史版本 无需担心资料丢失</li><li>群组、多级文件夹、标签 让资料井井有条</li><li>关键词全文搜索 快捷方式定位文件夹和笔记 快速找到所需资料<span id="more"></span></li></ul><p>  <strong>前言</strong><br>官网:<a href="https://www.wiz.cn/zh-cn/">WizNote</a></p><p>官方安装教程:<a href="https://www.wiz.cn/zh-cn/docker">WizNote</a></p><p><strong>安装</strong><br>安装Docker</p><p>curl -fsSL <a href="https://get.docker.com/">https://get.docker.com</a> -o get-docker.sh</p><p>sh get-docker.sh<br>启动为知笔记服务端<br>执行</p><p>cd ~<br>mkdir wizdata<br>然后执行</p><p>docker run –name wiz –restart=always -it -d -v  ~/wizdata:/wiz/storage -v  /etc/localtime:/etc/localtime -p 80:80 -p 9269:9269/udp  wiznote/wizserver<br>将其中的-p 80:80的一个80改为你想要的端口,例如-p 8080:80 或者改为-p 10003:80,这样下面的配置文件就不用改了</p><p>当然,如果你不想配置HTTPS而且本地没有其他HTTP服务器你可以直接梭哈</p><p>配置HTTPS<br>由于现在一直在用Apache,就只po出一个Apache的配置文件了</p><p>&lt;VirtualHost *:80&gt;<br>    ServerAdmin <a href="mailto:&#x61;&#x64;&#x6d;&#105;&#110;&#64;&#x6d;&#x6f;&#101;&#99;&#x2e;&#116;&#111;&#112;">&#x61;&#x64;&#x6d;&#105;&#110;&#64;&#x6d;&#x6f;&#101;&#99;&#x2e;&#116;&#111;&#112;</a><br>    DocumentRoot “/www/wwwroot/域名”<br>    ServerName 域名<br>    #errorDocument 404 /404.html<br>    ErrorLog “/www/wwwlogs/wiz.5777.tk-error_log”<br>    CustomLog “/www/wwwlogs/wiz.5777.tk-access_log” combined<br>    <Location /><br>    ProxyPass <a href="http://localhost:10003/">http://localhost:10003/</a><br>    ProxyPassReverse <a href="http://localhost:10003/">http://localhost:10003/</a><br>    </Location></p><pre><code>#DENY FILES &lt;Files ~ (\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)$&gt;   Order allow,deny   Deny from all&lt;/Files&gt;</code></pre></VirtualHost><VirtualHost *:443>    ServerAdmin admin@moec.top    DocumentRoot "/www/wwwroot/域名/"    ServerName 域名    #errorDocument 404 /404.html    ErrorLog "/www/wwwlogs/域名-error_log"    CustomLog "/www/wwwlogs/域名-access_log" combined <pre><code>&lt;Location /&gt;ProxyPass http://localhost:10003/ProxyPassReverse http://localhost:10003/&lt;/Location&gt;#SSLSSLEngine OnSSLCertificateFile /www/server/panel/vhost/cert/---/fullchain.pemSSLCertificateKeyFile /www/server/panel/vhost/cert/---/privkey.pemSSLCipherSuite EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5SSLProtocol All -SSLv2 -SSLv3 -TLSv1SSLHonorCipherOrder On#DENY FILES &lt;Files ~ (\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)$&gt;   Order allow,deny   Deny from all&lt;/Files&gt;</code></pre></VirtualHost>按照你的配置配置后,重载你的Apache即可<p>安装完成<br>访问你配置的域名即可</p><p>默认账号:密码 <a href="mailto:&#x61;&#x64;&#x6d;&#105;&#110;&#x40;&#119;&#105;&#122;&#46;&#99;&#110;">&#x61;&#x64;&#x6d;&#105;&#110;&#x40;&#119;&#105;&#122;&#46;&#99;&#110;</a>:123456<br><img src="https://img.2002000.xyz/imgs/2021/06/fe66b9023ec35d9b.png" alt="请输入图片描述"></p><p>然后点击头像,访问管理后台<br><img src="https://img.2002000.xyz/imgs/2021/06/cc0b16a6eb3d0ba3.png" alt="请输入图片描述"></p><p>访问用户管理即可更改管理员<br><img src="https://img.2002000.xyz/imgs/2021/06/99d22340ab592e6d.png" alt="请输入图片描述"></p><p>桌面客户端<br><a href="https://www.wiz.cn/zh-cn/download.html">桌面客户端</a></p><p><a href="https://www.wiz.cn/zh-cn/wiznote-lite">WizNote Lite (支持Markdown实时渲染)</a></p><p>客户端截图:<br><img src="https://img.2002000.xyz/imgs/2021/06/c9be9368435f9960.png" alt="请输入图片描述"></p><p>体验:</p><p>有一些BUG,不过能用.webp<br>如外链图片无法加载</p><p>更新<br>docker stop wiz<br>docker rm wiz<br>docker pull wiznote/wizserver:latest<br>备份<br>备份非常的简单,只需要备份~/wizdata这个文件夹即可</p><p>*@master-node:~/wizdata# ll<br>total 36<br>drwxr-xr-x  2 root  root  4096 Jun  6 08:30 config<br>drwxr-xr-x  3 root  root  4096 Jun  6 08:28 data_root<br>drwxrwxrwx 12 mysql mysql 4096 Jun  6 08:18 db<br>drwxrwxrwx  2 root  root  4096 Jun  6 08:23 index<br>drwxrwxrwx  3 root  root  4096 Jun  6 08:18 logs<br>drwxr-xr-x  3 root  root  4096 Jun  6 08:29 override_files<br>drwxr-xr-x  2 root  root  4096 Jun  6 08:46 wiz-abstract<br>drwxr-xr-x  2 root  root  4096 Jun  6 08:23 wiz-gather-dev<br>drwxr-xr-x  3 root  root  4096 Jun  6 08:46 wizserver-temp<br>里面包含了所有的数据</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://img.2002000.xyz/imgs/2021/06/fe66b9023ec35d9b.png" alt="请输入图片描述"></p><p><strong>软件特色</strong></p><ul><li>一键收集微信、网页、微博 保存碎片信息 批量导入文档</li><li>文字、清单、手写 图片、拍照、语音、附件 一次记录永久保存</li><li>轻量级图文编辑工具 内置Markdown功能 写出漂亮的文档</li><li>资料永久保存在云端 修改后的笔记会保存历史版本 无需担心资料丢失</li><li>群组、多级文件夹、标签 让资料井井有条</li><li>关键词全文搜索 快捷方式定位文件夹和笔记 快速找到所需资料<span id="more"></span></li></ul><p>  <strong>前言</strong><br>官网:<a href="https://www.wiz.cn/zh-cn/">WizNote</a></p><p>官方安装教程:<a href="https://www.wiz.cn/zh-cn/docker">WizNote</a></p><p><strong>安装</strong><br>安装Docker</p><p>curl -fsSL <a href="https://get.docker.com/">https://get.docker.com</a> -o get-docker.sh</p><p>sh get-docker.sh<br>启动为知笔记服务端<br>执行</p><p>cd ~<br>mkdir wizdata<br>然后执行</p><p>docker run –name wiz –restart=always -it -d -v  ~/wizdata:/wiz/storage -v  /etc/localtime:/etc/localtime -p 80:80 -p 9269:9269/udp  wiznote/wizserver<br>将其中的-p 80:80的一个80改为你想要的端口,例如-p 8080:80 或者改为-p 10003:80,这样下面的配置文件就不用改了</p><p>当然,如果你不想配置HTTPS而且本地没有其他HTTP服务器你可以直接梭哈</p><p>配置HTTPS<br>由于现在一直在用Apache,就只po出一个Apache的配置文件了</p><p>&lt;VirtualHost *:80&gt;<br>    ServerAdmin <a href="mailto:&#97;&#x64;&#x6d;&#x69;&#110;&#x40;&#109;&#x6f;&#x65;&#x63;&#46;&#x74;&#x6f;&#x70;">&#97;&#x64;&#x6d;&#x69;&#110;&#x40;&#109;&#x6f;&#x65;&#x63;&#46;&#x74;&#x6f;&#x70;</a><br>    DocumentRoot “/www/wwwroot/域名”<br>    ServerName 域名<br>    #errorDocument 404 /404.html<br>    ErrorLog “/www/wwwlogs/wiz.5777.tk-error_log”<br>    CustomLog “/www/wwwlogs/wiz.5777.tk-access_log” combined<br>    <Location /><br>    ProxyPass <a href="http://localhost:10003/">http://localhost:10003/</a><br>    ProxyPassReverse <a href="http://localhost:10003/">http://localhost:10003/</a><br>    </Location></p><pre><code>#DENY FILES &lt;Files ~ (\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)$&gt;   Order allow,deny   Deny from all&lt;/Files&gt;</code></pre></VirtualHost><VirtualHost *:443>    ServerAdmin admin@moec.top    DocumentRoot "/www/wwwroot/域名/"    ServerName 域名    #errorDocument 404 /404.html    ErrorLog "/www/wwwlogs/域名-error_log"    CustomLog "/www/wwwlogs/域名-access_log" combined <pre><code>&lt;Location /&gt;ProxyPass http://localhost:10003/ProxyPassReverse http://localhost:10003/&lt;/Location&gt;#SSLSSLEngine OnSSLCertificateFile /www/server/panel/vhost/cert/---/fullchain.pemSSLCertificateKeyFile /www/server/panel/vhost/cert/---/privkey.pemSSLCipherSuite EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5SSLProtocol All -SSLv2 -SSLv3 -TLSv1SSLHonorCipherOrder On#DENY FILES &lt;Files ~ (\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)$&gt;   Order allow,deny   Deny from all&lt;/Files&gt;</code></pre></VirtualHost>按照你的配置配置后,重载你的Apache即可<p>安装完成<br>访问你配置的域名即可</p><p>默认账号:密码 <a href="mailto:&#x61;&#100;&#109;&#x69;&#110;&#64;&#x77;&#105;&#x7a;&#x2e;&#x63;&#x6e;">&#x61;&#100;&#109;&#x69;&#110;&#64;&#x77;&#105;&#x7a;&#x2e;&#x63;&#x6e;</a>:123456<br><img src="https://img.2002000.xyz/imgs/2021/06/fe66b9023ec35d9b.png" alt="请输入图片描述"></p><p>然后点击头像,访问管理后台<br><img src="https://img.2002000.xyz/imgs/2021/06/cc0b16a6eb3d0ba3.png" alt="请输入图片描述"></p><p>访问用户管理即可更改管理员<br><img src="https://img.2002000.xyz/imgs/2021/06/99d22340ab592e6d.png" alt="请输入图片描述"></p><p>桌面客户端<br><a href="https://www.wiz.cn/zh-cn/download.html">桌面客户端</a></p><p><a href="https://www.wiz.cn/zh-cn/wiznote-lite">WizNote Lite (支持Markdown实时渲染)</a></p><p>客户端截图:<br><img src="https://img.2002000.xyz/imgs/2021/06/c9be9368435f9960.png" alt="请输入图片描述"></p><p>体验:</p><p>有一些BUG,不过能用.webp<br>如外链图片无法加载</p><p>更新<br>docker stop wiz<br>docker rm wiz<br>docker pull wiznote/wizserver:latest<br>备份<br>备份非常的简单,只需要备份~/wizdata这个文件夹即可</p><p>*@master-node:~/wizdata# ll<br>total 36<br>drwxr-xr-x  2 root  root  4096 Jun  6 08:30 config<br>drwxr-xr-x  3 root  root  4096 Jun  6 08:28 data_root<br>drwxrwxrwx 12 mysql mysql 4096 Jun  6 08:18 db<br>drwxrwxrwx  2 root  root  4096 Jun  6 08:23 index<br>drwxrwxrwx  3 root  root  4096 Jun  6 08:18 logs<br>drwxr-xr-x  3 root  root  4096 Jun  6 08:29 override_files<br>drwxr-xr-x  2 root  root  4096 Jun  6 08:46 wiz-abstract<br>drwxr-xr-x  2 root  root  4096 Jun  6 08:23 wiz-gather-dev<br>drwxr-xr-x  3 root  root  4096 Jun  6 08:46 wizserver-temp<br>里面包含了所有的数据</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://img.2002000.xyz/imgs/2021/06/fe66b9023ec35d9b.png&quot; alt=&quot;请输入图片描述&quot;&gt;&lt;/p&gt;
@@ -355,14 +355,14 @@ CloudFlare官网：&lt;a href=&quot;https://dash.cloudflare.com&quot;&gt;https:/
     
     
     
-    <category term="docker" scheme="https://g8d.xyz/tags/docker/"/>
+    <category term="docker" scheme="https://bnganblog.github.io/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>使用 jsDelivr 免费加速 GitHub Pages 博客的静态资源</title>
-    <link href="https://g8d.xyz/2021/03/20/jsDelivr/"/>
-    <id>https://g8d.xyz/2021/03/20/jsDelivr/</id>
+    <link href="https://bnganblog.github.io/2021/03/20/jsDelivr/"/>
+    <id>https://bnganblog.github.io/2021/03/20/jsDelivr/</id>
     <published>2021-03-20T03:51:24.000Z</published>
     <updated>2021-11-20T04:20:05.301Z</updated>
     
@@ -374,14 +374,14 @@ CloudFlare官网：&lt;a href=&quot;https://dash.cloudflare.com&quot;&gt;https:/
     
     
     
-    <category term="jsDelivr" scheme="https://g8d.xyz/tags/jsDelivr/"/>
+    <category term="jsDelivr" scheme="https://bnganblog.github.io/tags/jsDelivr/"/>
     
   </entry>
   
   <entry>
     <title>使用 jsDelivr 免费加速 GitHub Pages 博客的静态资源（二）</title>
-    <link href="https://g8d.xyz/2021/03/10/jsDelivr-2/"/>
-    <id>https://g8d.xyz/2021/03/10/jsDelivr-2/</id>
+    <link href="https://bnganblog.github.io/2021/03/10/jsDelivr-2/"/>
+    <id>https://bnganblog.github.io/2021/03/10/jsDelivr-2/</id>
     <published>2021-03-10T04:13:47.000Z</published>
     <updated>2021-11-20T04:20:14.298Z</updated>
     
@@ -393,14 +393,14 @@ CloudFlare官网：&lt;a href=&quot;https://dash.cloudflare.com&quot;&gt;https:/
     
     
     
-    <category term="jsDelivr" scheme="https://g8d.xyz/tags/jsDelivr/"/>
+    <category term="jsDelivr" scheme="https://bnganblog.github.io/tags/jsDelivr/"/>
     
   </entry>
   
   <entry>
     <title>B2+CF+ShareX,实现无成本图床和便捷上传</title>
-    <link href="https://g8d.xyz/2021/02/02/shareX/"/>
-    <id>https://g8d.xyz/2021/02/02/shareX/</id>
+    <link href="https://bnganblog.github.io/2021/02/02/shareX/"/>
+    <id>https://bnganblog.github.io/2021/02/02/shareX/</id>
     <published>2021-02-02T13:51:26.000Z</published>
     <updated>2021-11-02T13:53:42.373Z</updated>
     
@@ -415,7 +415,7 @@ CloudFlare官网：&lt;a href=&quot;https://dash.cloudflare.com&quot;&gt;https:/
     
     
     
-    <category term="cloudflare" scheme="https://g8d.xyz/tags/cloudflare/"/>
+    <category term="cloudflare" scheme="https://bnganblog.github.io/tags/cloudflare/"/>
     
   </entry>
   

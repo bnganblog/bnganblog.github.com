@@ -1,9 +1,210 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！ - 饼干博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="饼干博客"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="饼干博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="国外很多网站都在使用 Cloudflare CDN，但分配给中国访客的 IP 并不友好（高延迟&amp;#x2F;高丢包&amp;#x2F;速度慢等）。虽然 Cloudflare 公开了所有IP 段，但想要在这么多 IP 中找到适合自己的，怕是要累死，所以就有了这个软件。"><meta property="og:type" content="blog"><meta property="og:title" content="Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！"><meta property="og:url" content="https://g8d.xyz/2019/11/21/CloudflareSpeedTest/"><meta property="og:site_name" content="饼干博客"><meta property="og:description" content="国外很多网站都在使用 Cloudflare CDN，但分配给中国访客的 IP 并不友好（高延迟&amp;#x2F;高丢包&amp;#x2F;速度慢等）。虽然 Cloudflare 公开了所有IP 段，但想要在这么多 IP 中找到适合自己的，怕是要累死，所以就有了这个软件。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://g8d.xyz/img/og_image.png"><meta property="article:published_time" content="2019-11-21T15:25:30.000Z"><meta property="article:modified_time" content="2021-11-21T15:29:10.975Z"><meta property="article:author" content="饼干"><meta property="article:tag" content="cloudflare"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://g8d.xyz/2019/11/21/CloudflareSpeedTest/"},"headline":"Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！","image":["https://g8d.xyz/img/og_image.png"],"datePublished":"2019-11-21T15:25:30.000Z","dateModified":"2021-11-21T15:29:10.975Z","author":{"@type":"Person","name":"饼干"},"publisher":{"@type":"Organization","name":"饼干博客","logo":{"@type":"ImageObject","url":"https://g8d.xyz/img/logo.svg"}},"description":"国外很多网站都在使用 Cloudflare CDN，但分配给中国访客的 IP 并不友好（高延迟&#x2F;高丢包&#x2F;速度慢等）。虽然 Cloudflare 公开了所有IP 段，但想要在这么多 IP 中找到适合自己的，怕是要累死，所以就有了这个软件。"}</script><link rel="canonical" href="https://g8d.xyz/2019/11/21/CloudflareSpeedTest/"><link rel="alternate" href="/g8d.xyz/atom.xml" title="饼干博客" type="application/atom+xml"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-213615129-1" async></script><script>window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！ | 饼干博客</title><meta name="keywords" content="cloudflare"><meta name="author" content="饼干"><meta name="copyright" content="饼干"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！"><meta name="application-name" content="Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！"><meta property="og:url" content="https://bnganblog.github.io/2019/11/21/CloudflareSpeedTest/index.html"><meta property="og:site_name" content="饼干博客"><meta property="og:description" content="国外很多网站都在使用 Cloudflare CDN，但分配给中国访客的 IP 并不友好（高延迟&amp;#x2F;高丢包&amp;#x2F;速度慢等）。虽然 Cloudflare 公开了所有IP 段，但想要在这么多 IP 中找到适合自己的，怕是要累死，所以就有了这个软件。     快速使用下载运行 下载编译好的可执行文件 蓝奏云 &amp;#x2F;"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="饼干"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description" content="国外很多网站都在使用 Cloudflare CDN，但分配给中国访客的 IP 并不友好（高延迟&amp;#x2F;高丢包&amp;#x2F;速度慢等）。虽然 Cloudflare 公开了所有IP 段，但想要在这么多 IP 中找到适合自己的，怕是要累死，所以就有了这个软件。     快速使用下载运行 下载编译好的可执行文件 蓝奏云 &amp;#x2F;"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://bnganblog.github.io/2019/11/21/CloudflareSpeedTest/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 饼干","link":"链接: ","source":"来源: 饼干博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '饼干博客',
+  title: 'Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！',
+  postAI: '',
+  pageFillDescription: '快速使用, 下载运行, 结果示例, 进阶使用, 使用示例,  IPv4/IPv6,  文件相对/绝对路径,  自定义下载测速地址,  自定义测速条件,  单独对一个或多个 IP 测速,  Windows 快捷方式如何使用参数,  一劳永逸加速所有使用 Cloudflare CDN 的网站（不需要再一个个添加域名到 Hosts 了）,  自动更新 Hosts国外很多网站都在使用但分配给中国访客的并不友好高延迟高丢包速度慢等虽然公开了所有段但想要在这么多中找到适合自己的怕是要累死所以就有了这个软件快速使用下载运行下载编译好的可执行文件蓝奏云并解压双击运行文件等待测速完成点击查看下载运行命令示例以下命令仅为示例版本号和文件名请前往查看如果是第一次使用则建议创建新文件夹后续更新请跳过该步骤进入文件夹后续更新只需要从这里重复下面的下载解压命令即可下载压缩包自行根据需求替换中版本号和文件名解压不需要删除旧文件会直接覆盖自行根据需求替换文件名赋予执行权限运行如果平均延迟非常低如则说明测速时走了代理请先关闭代理软件后再测速如果在路由器上运行如请先关闭路由器内的代理否则测速结果会不准确且无法使用在手机上运行测速的简单教程建议测速时避开晚上高峰期否则测速结果会与其他时间相差很大结果示例测速完毕后默认会显示最快的个示例我联通白天测速结果地址已发送已接收丢包率平均延迟下载速度如果平均延迟非常低如则说明测速时走了代理请先关闭代理软件后再测速如果在路由器上运行如请先关闭路由器内的代理否则测速结果会不准确且无法使用因为默认下载测速地址的文件大小只有如果你速度太快的话测速结果可能会低于实际速度因为每次测速都是在每个段中随机所以每次的测速结果都不可能相同这是正常的软件是先延迟测速并按从低到高排序后再从最低延迟的开始下载测速的所以测速结果第一行就是既下载速度最快又平均延迟最低的最快至于拿来干嘛取决于你完整结果保存在当前目录下的文件中用记事本表格软件打开格式如下地址已发送已接收丢包率平均延迟下载速度大家可以按自己需求对完整结果进一步筛选处理或者去看一看进阶使用指定过滤条件进阶使用直接运行使用的是默认参数如果想要测速结果更全面更符合自己的要求可以自定义参数测试所有的延迟和速度获取最快参数测速线程数量越多测速越快性能弱的设备如路由器请勿太高默认最多延迟测速次数单个延迟测速次数为时将过滤丢包的协议默认延迟测速端口延迟测速协议的端口默认下载测速数量延迟测速并排序后从最低延迟起下载测速的数量默认下载测速时间单个下载测速最长时间单位秒默认下载测速地址用来下载测速的文件地址如地址含有空格请加上引号平均延迟上限只输出低于指定平均延迟的可与其他上限下限搭配默认平均延迟下限只输出高于指定平均延迟的可与其他上限下限搭配过滤被假蔷的默认下载速度下限只输出高于指定下载速度的凑够指定数量才会停止测速默认显示结果数量测速后直接显示指定数量的结果为时不显示结果直接退出默认段数据文件如路径含有空格请加上引号支持其他段默认写入结果文件如路径含有空格请加上引号值为空时不写入文件默认禁用下载测速禁用后测速结果会按延迟排序默认按下载速度排序默认启用测速模式确保段数据文件内只包含段软件不支持同时测速默认测速全部的对段中的每个仅支持进行测速默认每个段随机测速一个打印程序版本检查版本更新打印帮助说明使用示例要指定参数需要在中运行或者把参数添加到快捷方式目标中注意各参数均有默认值使用默认值的参数是可以省略的按需选择参数不分前后顺序提示系统只需要把下面命令中的改为即可测速时需要指定数据文件默认值就是所以该参数可以省略测速时需要指定数据文件需要加上参数文件相对绝对路径指定数据文件不显示结果直接退出输出结果到文件值为指定数据文件不输出结果到文件直接显示结果值为条值为空但引号不能少指定数据文件及输出结果到文件相对路径即当前目录下如含空格请加上引号指定数据文件及输出结果到文件绝对路径即目录下如含空格请加上引号自定义下载测速地址地址要求可以直接下载文件大小超过用的是因为默认下载测速地址的文件大小只有如果你速度太快的话测速结果可能会低于实际速度自定义测速条件点击展开查看内容指定平均延迟下限条件用于过滤被假蔷的这类都被劫持因此延迟很低只有几十平均延迟下限一般除了移动直连香港外几乎不存在低于的自行测试适合的下限延迟平均延迟下限和其他的上下限参数一样都可以单独使用互相搭配使用仅指定平均延迟上限条件平均延迟上限下载速度下限数量个可选即找到平均延迟低于的然后再按延迟从低到高进行次下载测速如果没有一个平均延迟低于那么不会输出任何内容仅指定平均延迟上限条件且只延迟测速不下载测速平均延迟上限下载速度下限数量不知道多少个即只输出低于的且不再下载测速因为不再下载测速所以参数就无效了仅指定下载速度下限条件平均延迟上限下载速度下限数量个可选即需要找到个平均延迟低于且下载速度高于的才会停止测速没有指定平均延迟上限时如果一直凑不够满足条件的数量就会一直测速下去所以建议同时指定下载速度下限平均延迟上限这样测速到指定延迟上限还没凑够数量就会终止测速同时指定平均延迟上限下载速度下限条件平均延迟上限下载速度下限均支持小数如平均延迟上限下载速度下限数量个可选即需要找到个平均延迟低于且下载速度高于的才会停止测速如果没有一个平均延迟低于那么不会输出任何内容如果没有一个下载速度高于那么就会和不指定下载速度下限条件一样输出结果所以建议先不指定条件测速一遍看看平均延迟和下载速度大概在什么范围避免指定条件过低过高因为公开的段是回源任播而回源是无法使用的所以下载测速是运行时可以加上下载速度下限过滤掉回源下载测速低于的结果单独对一个或多个测速点击展开查看内容如果要单独对一个或多个进行测速只需要把这些按如下格式写入到任意文本文件中例如单个的话可以省略子网掩码了即等同于子网掩码指的是这个最后一段即然后运行时加上启动参数即可先进入所在目录然后运行系统在中运行系统对于这样的段只会随机最后一段如果要测速该段中的所有请加上参数快捷方式如何使用参数点击展开查看内容右键快捷方式目标如果要不输出结果文件那么请加上引号里的是空格没有空格会导致该参数被省略如果文件路径包含引号则需要把启动参数放在引号外面记得引号和之间有空格一劳永逸加速所有使用的网站不需要再一个个添加域名到了我以前说过开发该软件项目的目的就是为了通过改的方式来加速访问使用的网站但就如所说一个个添加域名到实在太麻烦了于是我就找到了个一劳永逸的办法可以看这个还在一个个添加完美本地加速所有使用的网站方法来了自动更新考虑到很多人获得最快后需要替换文件中的可以看这个获取自动更新脚本',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-21 23:29:10',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
     
-        gtag('config', 'UA-213615129-1');</script><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><script data-ad-client="ca-pub-6587214059854307" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="饼干博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/friend">友链</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item night" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-lightbulb" id="night-icon"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-11-21T15:25:30.000Z" title="21/11/2019 下午11:25:30">2019-11-21</time>发表</span><span class="level-item">22 分钟读完 (大约3262个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！</h1><div class="content"><p>国外很多网站都在使用 Cloudflare CDN，但分配给中国访客的 IP 并不友好（高延迟/高丢包/速度慢等）。<br>虽然 Cloudflare 公开了所有IP 段，但想要在这么多 IP 中找到适合自己的，怕是要累死，所以就有了这个软件。  </p>
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="饼干博客" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">饼干博客</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>7</sup></a><a href="/tags/Markdown/" style="font-size: 1.05rem;">Markdown<sup>6</sup></a><a href="/tags/Minecraft/" style="font-size: 1.05rem;">Minecraft<sup>2</sup></a><a href="/tags/cloudflare/" style="font-size: 1.05rem;">cloudflare<sup>6</sup></a><a href="/tags/docker/" style="font-size: 1.05rem;">docker<sup>2</sup></a><a href="/tags/jsDelivr/" style="font-size: 1.05rem;">jsDelivr<sup>2</sup></a><a href="/tags/python/" style="font-size: 1.05rem;">python<sup>2</sup></a><a href="/tags/telegram/" style="font-size: 1.05rem;">telegram<sup>1</sup></a><a href="/tags/v2ray/" style="font-size: 1.05rem;">v2ray<sup>2</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">10</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"><a class="article-meta__tags" href="/tags/cloudflare/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>cloudflare</span></a></span></div></div><h1 class="post-title" itemprop="name headline">Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2019-11-21T15:25:30.000Z" title="发表于 2019-11-21 23:25:30">2019-11-21</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2021-11-21T15:29:10.975Z" title="更新于 2021-11-21 23:29:10">2021-11-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://bnganblog.github.io/2019/11/21/CloudflareSpeedTest/"><header><a href="/tags/cloudflare/" tabindex="-1" itemprop="url">cloudflare</a><h1 id="CrawlerTitle" itemprop="name headline">Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">饼干</span><time itemprop="dateCreated datePublished" datetime="2019-11-21T15:25:30.000Z" title="发表于 2019-11-21 23:25:30">2019-11-21</time><time itemprop="dateCreated datePublished" datetime="2021-11-21T15:29:10.975Z" title="更新于 2021-11-21 23:29:10">2021-11-21</time></header><p>国外很多网站都在使用 Cloudflare CDN，但分配给中国访客的 IP 并不友好（高延迟/高丢包/速度慢等）。<br>虽然 Cloudflare 公开了所有IP 段，但想要在这么多 IP 中找到适合自己的，怕是要累死，所以就有了这个软件。  </p>
 <span id="more"></span>
 <hr>
 <h2 id="快速使用"><a href="#快速使用" class="headerlink" title="快速使用"></a>快速使用</h2><h3 id="下载运行"><a href="#下载运行" class="headerlink" title="下载运行"></a>下载运行</h3><ol>
@@ -128,81 +329,148 @@
 <hr>
 <h4 id="自动更新-Hosts"><a href="#自动更新-Hosts" class="headerlink" title="# 自动更新 Hosts"></a># 自动更新 Hosts</h4><p>考虑到很多人获得最快 Cloudflare CDN IP 后，需要替换 Hosts 文件中的 IP。</p>
 <p>可以看这个 <a target="_blank" rel="noopener" href="https://github.com/XIU2/CloudflareSpeedTest/issues/42"><strong>Issues</strong></a> 获取 <strong>Windows/Linux 自动更新 Hosts 脚本</strong>！</p>
-</div><div class="article-licensing box"><div class="licensing-title"><p>Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！</p><p><a href="https://g8d.xyz/2019/11/21/CloudflareSpeedTest/">https://g8d.xyz/2019/11/21/CloudflareSpeedTest/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>饼干</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2019-11-21</p></div></div><div class="level-item is-narrow"><div><h6>最后一次阅读</h6><p>2021-11-21</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/cloudflare/">cloudflare</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/01/06/Linux-Minecraft-Java/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Linux 搭建 Minecraft Java 服务器</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2019/11/20/python/"><span class="level-item">Python入门实践</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
-            el: '#valine-thread',
-            appId: "v3dv3QqqS00eIiEF2UVsdaSW-MdYXbMMI",
-            appKey: "tbqmvM36ozawWC8AS6k5n7ev",
-            
-            
-            avatarForce: false,
-            meta: ["nick","mail","link"],
-            pageSize: 10,
-            lang: "zh-CN",
-            visitor: false,
-            highlight: true,
-            recordIP: false,
-            
-            
-            
-            enableQQ: false,
-            requiredFields: [],
-        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="饼干"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">饼干</p><p class="is-size-6 is-block">新的开始</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Singapore</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">39</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">9</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/bnganblog" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/bnganblog"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Telegram" href="https://t.me/bnganblog"><i class="fab fa-telegram"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="开往" href="https://travellings.link"><i class="fas fa-subway"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://yejiangye.com" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">夜将夜</span></span><span class="level-right"><span class="level-item tag">yejiangye.com</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-31T05:00:00.000Z">2022-01-31</time></p><p class="title"><a href="/2022/01/31/v2/">新年快乐！！！</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-29T04:55:26.000Z">2022-01-29</time></p><p class="title"><a href="/2022/01/29/hax/">申请hax免费VPS配合cf和x-ui搭建免费节点及自动续费</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-26T13:36:43.000Z">2021-11-26</time></p><p class="title"><a href="/2021/11/26/icarus/">icarus个性化配置</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-26T12:29:59.000Z">2021-11-26</time></p><p class="title"><a href="/2021/11/26/Typed/">打字机效果:Typed.js</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-24T14:45:45.000Z">2021-11-24</time></p><p class="title"><a href="/2021/11/24/Cloudflare-Worker-%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%BD%E6%9F%A5-Git-%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/">Cloudflare Worker 无服务器追查 Git 仓库代码泄露</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/03/"><span class="level-start"><span class="level-item">三月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/01/"><span class="level-start"><span class="level-item">一月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/11/"><span class="level-start"><span class="level-item">十一月 2019</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/07/"><span class="level-start"><span class="level-item">七月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Markdown/"><span class="tag">Markdown</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Minecraft/"><span class="tag">Minecraft</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cloudflare/"><span class="tag">cloudflare</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jsDelivr/"><span class="tag">jsDelivr</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/telegram/"><span class="tag">telegram</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/v2ray/"><span class="tag">v2ray</span><span class="tag">2</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6587214059854307" data-ad-slot="5515033840" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="饼干博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 饼干</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>
-		var now = new Date();
-		function createtime() {
-			var grt= new Date("7/22/2018 16:23:00");//此处修改你的建站时间或者网站上线时间
-			now.setTime(now.getTime()+250);
-			days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-			hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-			if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-			mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-			seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-			snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-			document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
-			document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-		}
-		setInterval("createtime()",250);
-		</script><br><span id="busuanzi_container_site_uv">自2021年11月26日以来共<span id="busuanzi_value_site_uv">0</span>个访客</span><span> | </span><span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv">0</span></span></p></div><div class="level-end"></div></div></div></footer><script src="/js/night.js" defer></script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
-            }
-        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://s9.cnzz.com/z_stat.php?id=1280230490&amp;web_id=1280230490" async></script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
-        },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
-      });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">饼干</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://bnganblog.github.io/2019/11/21/CloudflareSpeedTest/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://bnganblog.github.io/2019/11/21/CloudflareSpeedTest/')">Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://bnganblog.github.io/2019/11/21/CloudflareSpeedTest/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Cloudflare 优选IP 获取最快 IP (IPv4+IPv6)！&amp;url=https://bnganblog.github.io/2019/11/21/CloudflareSpeedTest/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://bnganblog.github.io" target="_blank">饼干博客</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/cloudflare/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>cloudflare<span class="tagsPageCount">6</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/11/20/python/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python入门实践</div></div></a></div><div class="next-post pull-right"><a href="/2020/01/06/Linux-Minecraft-Java/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Linux 搭建 Minecraft Java 服务器</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2021/10/31/CloudFlare-Workers/" title="CloudFlare Workers 反代任意网站和挂载单页代码"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-10-31</div><div class="title">CloudFlare Workers 反代任意网站和挂载单页代码</div></div></a></div><div><a href="/2021/10/31/Cloudflare-Pages/" title="使用 Cloudflare Pages 托管静态网站"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-10-31</div><div class="title">使用 Cloudflare Pages 托管静态网站</div></div></a></div><div><a href="/2021/11/19/CloudFlare-%E7%BC%93%E5%AD%98%E5%85%A8%E7%AB%99/" title="CloudFlare 缓存全站"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-11-19</div><div class="title">CloudFlare 缓存全站</div></div></a></div><div><a href="/2021/11/24/Cloudflare-Worker-%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%BD%E6%9F%A5-Git-%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/" title="Cloudflare Worker 无服务器追查 Git 仓库代码泄露"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-11-24</div><div class="title">Cloudflare Worker 无服务器追查 Git 仓库代码泄露</div></div></a></div><div><a href="/2021/02/02/shareX/" title="B2+CF+ShareX,实现无成本图床和便捷上传"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-02-02</div><div class="title">B2+CF+ShareX,实现无成本图床和便捷上传</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">饼干</h1><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/bnganblog" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://t.me/bnganblog" target="_blank" title="Telegarm"><i class="anzhiyufont anzhiyu-icon-paper-plane"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">快速使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E8%BF%90%E8%A1%8C"><span class="toc-number">1.1.</span> <span class="toc-text">下载运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.2.</span> <span class="toc-text">结果示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">进阶使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.1.</span> <span class="toc-text">使用示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IPv4-IPv6"><span class="toc-number">2.1.1.</span> <span class="toc-text"># IPv4&#x2F;IPv6</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%B8%E5%AF%B9-%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">2.1.2.</span> <span class="toc-text"># 文件相对&#x2F;绝对路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8B%E8%BD%BD%E6%B5%8B%E9%80%9F%E5%9C%B0%E5%9D%80"><span class="toc-number">2.1.3.</span> <span class="toc-text"># 自定义下载测速地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B5%8B%E9%80%9F%E6%9D%A1%E4%BB%B6"><span class="toc-number">2.1.4.</span> <span class="toc-text"># 自定义测速条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E7%8B%AC%E5%AF%B9%E4%B8%80%E4%B8%AA%E6%88%96%E5%A4%9A%E4%B8%AA-IP-%E6%B5%8B%E9%80%9F"><span class="toc-number">2.1.5.</span> <span class="toc-text"># 单独对一个或多个 IP 测速</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows-%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%8F%82%E6%95%B0"><span class="toc-number">2.1.6.</span> <span class="toc-text"># Windows 快捷方式如何使用参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E5%8A%B3%E6%B0%B8%E9%80%B8%E5%8A%A0%E9%80%9F%E6%89%80%E6%9C%89%E4%BD%BF%E7%94%A8-Cloudflare-CDN-%E7%9A%84%E7%BD%91%E7%AB%99%EF%BC%88%E4%B8%8D%E9%9C%80%E8%A6%81%E5%86%8D%E4%B8%80%E4%B8%AA%E4%B8%AA%E6%B7%BB%E5%8A%A0%E5%9F%9F%E5%90%8D%E5%88%B0-Hosts-%E4%BA%86%EF%BC%89"><span class="toc-number">2.1.7.</span> <span class="toc-text"># 一劳永逸加速所有使用 Cloudflare CDN 的网站（不需要再一个个添加域名到 Hosts 了）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0-Hosts"><span class="toc-number">2.1.8.</span> <span class="toc-text"># 自动更新 Hosts</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/31/v2/" title="新年快乐！！！">新年快乐！！！</a><time datetime="2022-01-31T05:00:00.000Z" title="发表于 2022-01-31 13:00:00">2022-01-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/29/hax/" title="申请hax免费VPS配合cf和x-ui搭建免费节点及自动续费">申请hax免费VPS配合cf和x-ui搭建免费节点及自动续费</a><time datetime="2022-01-29T04:55:26.000Z" title="发表于 2022-01-29 12:55:26">2022-01-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/11/26/icarus/" title="icarus个性化配置">icarus个性化配置</a><time datetime="2021-11-26T13:36:43.000Z" title="发表于 2021-11-26 21:36:43">2021-11-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/11/26/Typed/" title="打字机效果:Typed.js">打字机效果:Typed.js</a><time datetime="2021-11-26T12:29:59.000Z" title="发表于 2021-11-26 20:29:59">2021-11-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/11/24/Cloudflare-Worker-%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%BD%E6%9F%A5-Git-%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2/" title="Cloudflare Worker 无服务器追查 Git 仓库代码泄露">Cloudflare Worker 无服务器追查 Git 仓库代码泄露</a><time datetime="2021-11-24T14:45:45.000Z" title="发表于 2021-11-24 22:45:45">2021-11-24</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="饼干" target="_blank">饼干</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">0</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>7</sup></a><a href="/tags/Markdown/" style="font-size: 0.88rem;">Markdown<sup>6</sup></a><a href="/tags/Minecraft/" style="font-size: 0.88rem;">Minecraft<sup>2</sup></a><a href="/tags/cloudflare/" style="font-size: 0.88rem;">cloudflare<sup>6</sup></a><a href="/tags/docker/" style="font-size: 0.88rem;">docker<sup>2</sup></a><a href="/tags/jsDelivr/" style="font-size: 0.88rem;">jsDelivr<sup>2</sup></a><a href="/tags/python/" style="font-size: 0.88rem;">python<sup>2</sup></a><a href="/tags/telegram/" style="font-size: 0.88rem;">telegram<sup>1</sup></a><a href="/tags/v2ray/" style="font-size: 0.88rem;">v2ray<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://t1.kugou.com/bYm3n98COV2&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 饼干 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
